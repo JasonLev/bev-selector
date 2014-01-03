@@ -5,17 +5,7 @@
     <%= f.hidden_field :user_id, value: @user.id %>
 
     <%= f.label "What beverage do you want?" %></br>
-    <select class="form-control">
-      <option value="Beer">Beer</option>
-      <option value="Wine">Wine</option>
-      <option value="Cocktail">Cocktail</option>
-      <option value="Water">Water</option>
-      <option value="Soda">Soda</option>
-      <option value="Juice">Juice</option>
-      <option value="Coffee">Coffee</option>
-      <option value="Tea">Tea</option>
-    </select>
-
+    <%= f.select(:selection, ['Beer', 'Wine', 'Cocktail', 'Water', 'Soda', 'Juice', 'Coffee', 'Tea', 'Other'], :class => "form-control") %>
     <hr>
     <%= f.submit "Order" %>
   <% end %>

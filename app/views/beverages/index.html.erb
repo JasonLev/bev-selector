@@ -1,2 +1,9 @@
-<h1>Beverages#index</h1>
-<p>Find me in app/views/beverages/index.html.erb</p>
+<h1>Beverage History</h1>
+<p>You ordered these beverages:</p>
+<br>
+<% @beverages.each do |beverage| %>
+  <%= beverage.selection %>
+  <br>
+  on <%= beverage.created_at %>
+  <hr>
+<% end %>
