@@ -1,0 +1,22 @@
+<div id="bev-order" class="jumbotron">
+  <h1>Order a new beverage</h1>
+  <br>
+  <%= form_for(:beverage, url:"/beverages") do |f| %>
+    <%= f.hidden_field :user_id, value: @user.id %>
+
+    <%= f.label "What beverage do you want?" %></br>
+    <select class="form-control">
+      <option value="Beer">Beer</option>
+      <option value="Wine">Wine</option>
+      <option value="Cocktail">Cocktail</option>
+      <option value="Water">Water</option>
+      <option value="Soda">Soda</option>
+      <option value="Juice">Juice</option>
+      <option value="Coffee">Coffee</option>
+      <option value="Tea">Tea</option>
+    </select>
+
+    <hr>
+    <%= f.submit "Order" %>
+  <% end %>
+</div>
