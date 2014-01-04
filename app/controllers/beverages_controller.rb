@@ -3,7 +3,7 @@ class BeveragesController < ApplicationController
 
 
   def index
-    @beverages = Beverage.all
+    @beverages = current_user.beverages.all
   end
 
   def new
@@ -16,7 +16,7 @@ class BeveragesController < ApplicationController
   end
 
   def show
-    @beverage = Beverage.last
+    @beverage = current_user.beverages.last
   end
 
   def destory

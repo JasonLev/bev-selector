@@ -1,9 +1,24 @@
-<h1>Beverage History</h1>
-<p>You ordered these beverages:</p>
-<br>
-<% @beverages.each do |beverage| %>
-  <%= beverage.selection %>
-  <br>
-  on <%= beverage.created_at %>
-  <hr>
-<% end %>
+<div class="jumbotron">
+  <h1>Beverage History</h1>
+  <h3>You ordered these beverages:</h3>
+  <% if @beverages != nil %>
+    <% @beverages.each do |beverage| %>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Beverage Selection:</h3>
+        </div>
+        <div class="panel-body">
+          <%= beverage.selection %>
+        </div>
+        <div class="panel-heading">
+          <h3 class="panel-title">Order date:</h3>
+        </div>
+        <div class="panel-body">
+          <%= beverage.created_at %>
+        </div>
+      </div>
+    <% end %>
+  <% else %>
+    <h4>Nothing, yet.</h4>
+  <% end %>
+</div>
