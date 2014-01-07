@@ -1,0 +1,27 @@
+<div class="jumbotron">
+  <h1>All Friends</h1>
+  <h3>These are all the friends you've told about your orders:</h3>
+  <% if @friends.empty? %>
+    <div id="empty-list">
+      <h4>You haven't told your friends.  Do you have any friends?</h4>
+      <a href="/friends/new"><button type="button" class="btn btn-primary">Tell them about your last order</button></a>
+    </div>
+  <% else %>
+    <% @friends.each do |friend| %>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Friend:</h3>
+        </div>
+        <div class="panel-body">
+          <%= friend.name %>
+        </div>
+        <div class="panel-heading">
+          <h3 class="panel-title">Email:</h3>
+        </div>
+        <div class="panel-body">
+          <%= friend.email %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>

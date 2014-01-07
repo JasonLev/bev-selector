@@ -1,0 +1,15 @@
+<div id="friend-new" class="jumbotron">
+  <h1>Tell a friend about your order...</h1>
+  <br>
+  <%= form_for(:friend, url:"/friends") do |f| %>
+    <%= f.hidden_field :user_id, value: @user.id %>
+
+    <div><%= f.label :name %><br />
+    <%= f.text_field :name %></div>
+
+    <div><%= f.label :email %><br />
+    <%= f.email_field :email, :autofocus => true %></div>
+    <hr>
+    <%= f.submit "Tell a friend" %>
+  <% end %>
+</div>

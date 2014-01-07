@@ -1,7 +1,12 @@
 <div class="jumbotron">
   <h1>Beverage History</h1>
   <h3>You ordered these beverages:</h3>
-  <% if @beverages != nil %>
+  <% if @beverages.empty? %>
+    <div id="empty-list">
+      <h4>Nothing, yet.</h4>
+      <a href="/beverages/new"><button type="button" class="btn btn-primary">Order a drink</button></a>
+    </div>
+  <% else %>
     <% @beverages.each do |beverage| %>
       <div class="panel panel-default">
         <div class="panel-heading">
@@ -14,11 +19,9 @@
           <h3 class="panel-title">Order date:</h3>
         </div>
         <div class="panel-body">
-          <%= beverage.created_at %>
+          <%= beverage.created_at.strftime("%m/%d/%Y at %I:%M %p") %>
         </div>
       </div>
     <% end %>
-  <% else %>
-    <h4>Nothing, yet.</h4>
   <% end %>
 </div>

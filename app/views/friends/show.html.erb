@@ -1,0 +1,12 @@
+<div id="friend-result" class="jumbotron" >
+  <h1>Success!  Your friend, <%= @friend.name %>, was sent an email.</h1>
+  <div id="friend-options">
+    <h3>Want to tell another friend about your order?</h3>
+    <a href="/friends/new"><button type="button" class="btn btn-info">Tell another friend!</button></a>
+    <a href="/friends"><button type="button" class="btn btn-default">See all the friends you've ever told about your orders</button></a>
+    <hr>
+    <h3>Or...</h3>
+    <a href="/beverages/new"><button type="button" class="btn btn-primary">Order another drink</button></a>
+    <a href="/beverages"><button type="button" class="btn btn-default">See your drink history</button></a>
+  </div>
+</div>

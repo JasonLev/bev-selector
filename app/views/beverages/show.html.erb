@@ -1,8 +1,10 @@
-<div class="jumbotron">
-  <h1>Great!  You've ordered a beverage, successfully!</h1>
+<div id="bev-result" class="jumbotron" >
+  <h1>Great!  You've ordered a beverage successfully!</h1>
   <p>You submitted an order for: <%= @beverage.selection %></p>
-  <p>Your order was sumbitted on: <%= @beverage.created_at %></p>
-
+  <p>Your order was sumbitted on: <%= @beverage.created_at.strftime("%m/%d/%Y at %I:%M %p") %></p>
+  <p>Want to tell a friend about your order?</p>
+  <a href="/friends/new"><button type="button" class="btn btn-info">Tell a friend!</button></a>
+  <hr>
   <a href="/beverages/new"><button type="button" class="btn btn-primary">Order another drink</button></a>
   <a href="/beverages"><button type="button" class="btn btn-default">See your drink history</button></a>
 </div>
