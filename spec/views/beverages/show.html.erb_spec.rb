@@ -1,5 +1,5 @@
 require 'spec_helper'
 
-describe "beverages/show.html.erb" do
-  pending "add some examples to (or delete) #{__FILE__}"
-end
+# describe "beverages/show.html.erb" do
+#   pending "add some examples to (or delete) #{__FILE__}"
+# end
